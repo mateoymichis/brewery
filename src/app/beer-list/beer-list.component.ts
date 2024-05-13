@@ -7,6 +7,19 @@ import { Beer } from './Beer';
   styleUrl: './beer-list.component.scss'
 })
 export class BeerListComponent {
+
+upQuantity(beer: Beer): void {
+  if(beer.stock > beer.quantity) {
+    beer.quantity ++;
+  }
+}
+
+downQuantity(beer: Beer): void {
+  if(beer.quantity > 0) {
+    beer.quantity --;
+  }
+ }
+
   beers: Beer[] = [
     {
       name: "Porteña loca",
@@ -15,6 +28,7 @@ export class BeerListComponent {
       stock: 49,
       image: "assets/img/porter.jpg",
       clearance: false,
+      quantity: 0,
     },
     {
       name: "Lupulada",
@@ -23,6 +37,7 @@ export class BeerListComponent {
       stock: 7,
       image: "assets/img/porter.jpg",
       clearance: true,
+      quantity: 0,
     },
     {
       name: "Doradísima",
@@ -31,6 +46,7 @@ export class BeerListComponent {
       stock: 0,
       image: "assets/img/porter.jpg",
       clearance: false,
+      quantity: 0,
     },
   ]; 
 }
