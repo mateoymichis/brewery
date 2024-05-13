@@ -20,9 +20,11 @@
                 <span *ngIf="beer.stock > 0" class="badge bg-success">Disponible</span>
             </td>
             <td>
-                <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(beer)">-</button>
-                <input type="number" [(ngModel)]="beer.quantity">
-                <button type="button" class="btn btn-primary btn-sm"  (click)="upQuantity(beer)">+</button>
+                <div *ngIf="beer.stock > 0" class="form-group">
+                    <button type="button" class="btn btn-primary btn-xs" (click)="downQuantity(beer)">-</button>            
+                    <input class="smallInput" type="number" [(ngModel)]="beer.quantity" (focusout)="verifyBeerQuantity(beer)"/>
+                    <button type="button" class="btn btn-primary btn-xs" (click)="upQuantity(beer)">+</button>
+                </div>
             </td>
         </tr>
     </tbody>

@@ -7,6 +7,15 @@ import { Beer } from './Beer';
   styleUrl: './beer-list.component.scss'
 })
 export class BeerListComponent {
+  verifyBeerQuantity(beer: Beer){
+    if(beer.quantity > beer.stock) {
+      alert("No hay suficientes cervezas en stock");
+    }
+    if(beer.quantity < 0) {
+      alert("No se pueden encargar cervezas negativas ");
+    }
+    beer.quantity = 0;
+  }
 
 upQuantity(beer: Beer): void {
   if(beer.stock > beer.quantity) {
