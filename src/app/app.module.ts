@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { BreweryAboutComponent } from './brewery-about/brewery-about.component';
 import { CartComponent } from './cart/cart.component';
 import { BreweryBeersComponent } from './brewery-beers/brewery-beers.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BreweryBeersComponent } from './brewery-beers/brewery-beers.component';
     BeerListComponent,
     BreweryAboutComponent,
     BreweryBeersComponent,
-    CartComponent
+    CartComponent,
+    InputNumberComponent
   ],
   imports: [
     BrowserModule,

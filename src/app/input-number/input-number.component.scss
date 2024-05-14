@@ -1,0 +1,15 @@
+.smallInput{
+    max-width: 40px;
+}
+
+/* Estilo para ocultar las flechas en Chrome, Safari y Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Estilo para ocultar las flechas en Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

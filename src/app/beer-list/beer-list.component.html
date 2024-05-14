@@ -21,11 +21,8 @@
                 <span *ngIf="beer.stock > 0" class="badge bg-success">Disponible</span>
             </td>
             <td>
-                <div *ngIf="beer.stock > 0" class="form-group">
-                    <button type="button" class="btn btn-primary btn-xs" (click)="downQuantity(beer)">-</button>            
-                    <input class="smallInput" type="number" [(ngModel)]="beer.quantity" (focusout)="verifyBeerQuantity(beer)"/>
-                    <button type="button" class="btn btn-primary btn-xs" (click)="upQuantity(beer)">+</button>
-                </div>
+                <app-input-number [(quantity)]="beer.quantity" [max]="beer.stock" *ngIf="beer.stock > 0"></app-input-number>
+                cant: {{beer.quantity}}
             </td>
         </tr>
     </tbody>
