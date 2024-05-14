@@ -16,6 +16,8 @@ export class InputNumberComponent {
   @Output()
   quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
+  @Output()
+  maxReached: EventEmitter<string> = new EventEmitter<string>();
 
   verifyBeerQuantity() {
     if (this.quantity > this.max) {
@@ -33,6 +35,8 @@ export class InputNumberComponent {
     if (this.max > this.quantity) {
       this.quantity++;
       this.quantityChange.emit(this.quantity);
+    } else {
+      this.maxReached.emit("Se alcanzó el máximo")
     }
   }
 

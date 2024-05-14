@@ -8,6 +8,10 @@ import { Beer } from './Beer';
 })
 export class BeerListComponent {
 
+  maxReached(m: string) {
+    alert(m);
+  }
+
   beers: Beer[] = [
     {
       name: "Porteña loca",

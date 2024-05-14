@@ -21,8 +21,7 @@
                 <span *ngIf="beer.stock > 0" class="badge bg-success">Disponible</span>
             </td>
             <td>
-                <app-input-number [(quantity)]="beer.quantity" [max]="beer.stock" *ngIf="beer.stock > 0"></app-input-number>
-                cant: {{beer.quantity}}
+                <app-input-number [(quantity)]="beer.quantity" [max]="beer.stock" (maxReached)="maxReached($event)" *ngIf="beer.stock > 0"></app-input-number>
             </td>
         </tr>
     </tbody>
