@@ -15,13 +15,15 @@
             <td><img width="90" class="img-thumbnail" [src]="beer.image" [alt]="beer.name"></td>
             <td>{{beer.name}}</td>
             <td>{{beer.type}}</td>
-            <td>{{beer.price | currency}}</td>
+            <td>{{beer.price | currency:'ARS' }}</td>
             <td>
                 <span *ngIf="beer.stock == 0" class="badge bg-danger">Sin stock</span>
                 <span *ngIf="beer.stock > 0" class="badge bg-success">Disponible</span>
             </td>
             <td>
-                <app-input-number [(quantity)]="beer.quantity" [max]="beer.stock" (maxReached)="maxReached($event)" *ngIf="beer.stock > 0"></app-input-number>
+                <app-input-number [(quantity)]="beer.quantity" [max]="beer.stock" (maxReached)="maxReached($event)"
+                    *ngIf="beer.stock > 0"></app-input-number>
+                <button class="btn btn-primary" (click)="addToCart(beer)">Comprar</button>
             </td>
         </tr>
     </tbody>

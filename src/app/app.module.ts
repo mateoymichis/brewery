@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,10 @@ import { CartComponent } from './cart/cart.component';
 import { BreweryBeersComponent } from './brewery-beers/brewery-beers.component';
 import { InputNumberComponent } from './input-number/input-number.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeEsAr from '@angular/common/locales/es-AR';
+
+registerLocaleData(localeEsAr, 'es-AR');
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +30,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
     FormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    { provide: LOCALE_ID, useValue: 'es-AR' }
   ],
   bootstrap: [AppComponent]
 })
