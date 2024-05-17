@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Beer } from './Beer';
+import { BeerCartService } from '../beer-cart.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -8,8 +9,17 @@ import { Beer } from './Beer';
 })
 export class BeerListComponent {
 
+  constructor(private cart: BeerCartService) {
+  }
+
   maxReached(m: string) {
     alert(m);
+  }
+
+  addToCart(beer: Beer): void {
+    this.cart.addToCart(beer);
+    beer.stock -= beer.quantity;
+    beer.quantity = 0;
   }
 
   beers: Beer[] = [
