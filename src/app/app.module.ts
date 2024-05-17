@@ -13,6 +13,7 @@ import { InputNumberComponent } from './input-number/input-number.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeEsAr from '@angular/common/locales/es-AR';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localeEsAr, 'es-AR');
 @NgModule({
@@ -27,7 +28,8 @@ registerLocaleData(localeEsAr, 'es-AR');
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(),
